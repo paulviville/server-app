@@ -31,8 +31,8 @@ export default class ServerNetwork {
 			this.#handleConnection( socket );
 		});
 
-		process.on('SIGINT', ( ) => { this.#handleShutdown( ); httpsServer.close() })
-		process.on('SIGTERM', ( ) => { this.#handleShutdown( ); httpsServer.close() })
+		process.on('SIGINT', ( ) => { this.#handleShutdown( ); httpsServer?.close() })
+		process.on('SIGTERM', ( ) => { this.#handleShutdown( ); httpsServer?.close() })
 	}
 
 	#handleConnection ( socket ) {
