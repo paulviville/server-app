@@ -81,11 +81,12 @@ export default class ServerNetwork {
 
 	#handleShutdown ( ) {
         console.log(`ServerNetwork - #handleShutdown`);
-
+		console.log(this.#server.server)
 		this.#server.clients.forEach( ( client ) => {
 			client.close( CLOSING.SHUTDOWN, "Server shutting down" );
 		} );
 
+		this.#server.server.close( );
 		this.#server.close( );
 	}
 
