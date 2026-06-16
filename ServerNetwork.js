@@ -86,7 +86,8 @@ export default class ServerNetwork {
 			client.close( CLOSING.SHUTDOWN, "Server shutting down" );
 		} );
 
-		this.#server.server.close( );
+		if ( this.#server.server )
+			 this.#server.server.close( );
 		this.#server.close( );
 	}
 
