@@ -21,7 +21,7 @@ export default class ServerNetwork {
 		console.log(`ServerNetwork - start ${ port }`);
 
 		if ( httpsServer ) {
-			this.#server = new WebSocketServer({ httpsServer: httpsServer });
+			this.#server = new WebSocketServer({ server: httpsServer });
 		}
 		else {
 			this.#server = new WebSocketServer({ port: port });
